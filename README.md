@@ -1,6 +1,6 @@
 # Swift-Import Interoperability with Kotlin Multiplatform
 
-This project is a playground demonstrating how to import Swift code from Swift Package Manager (SPM) into a Kotlin Multiplatform (KMP) project using the [spmforkmp](https://spmforkmp.eu/) plugin.
+This project is a playground demonstrating how to import Swift code from Swift Package Manager (SPM) into a Kotlin Multiplatform (KMP) project using the [spmForKMP](https://spmforkmp.eu/) plugin.
 
 It provides practical examples of Swift-Kotlin interoperability, specifically for iOS testing and development.
 
