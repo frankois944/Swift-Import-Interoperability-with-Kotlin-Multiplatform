@@ -4,9 +4,7 @@ This project is a playground demonstrating how to import Swift code from Swift P
 
 It provides practical examples of Swift-Kotlin interoperability, specifically for iOS testing and development.
 
-## Keep in Touch
-
-Watch this repository for updates and new features!
+These examples are working with any other way to [import Swift Code through cinterop.](https://kotlinlang.org/docs/native-lib-import-stability.html)
 
 ## Features and Examples
 
