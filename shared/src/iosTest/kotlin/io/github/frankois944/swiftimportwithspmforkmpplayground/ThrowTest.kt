@@ -9,6 +9,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.test.assertNull
 
 /**
  * This test class demonstrates the use case of importing Swift code that throws errors from a
@@ -50,17 +51,41 @@ class ThrowTest {
     @Test
     fun throwAnErrorWithParamAndReturnWithError() {
         var error: SwiftException? = null
+        var value: String? = null
         try {
-            executeWithErrorHandling {
+            value = executeWithErrorHandling {
                 throwClass.throwAnErrorWithParamAndReturn("", it)
             }
         } catch (ex: SwiftException) {
             error = ex
         }
+        assertNull(value)
         assertNotNull(error)
         assertEquals(
             error.nsError.code,
             ThrowError.ThrowErrorError2.value,
+        )
+    }
+
+    /**
+     * This test demonstrates handling a Swift method that takes a parameter and returns a value,
+     * specifically verifying the value returned to Kotlin.
+     */
+    @Test
+    fun throwAnErrorWithParamAndReturnValue() {
+        var error: SwiftException? = null
+        var value: String? = null
+        try {
+            value = executeWithErrorHandling {
+                throwClass.throwAnErrorWithParamAndReturn("France", it)
+            }
+        } catch (ex: SwiftException) {
+            error = ex
+        }
+        assertNull(error)
+        assertEquals(
+            "Hello France",
+            value,
         )
     }
 }
