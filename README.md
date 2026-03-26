@@ -51,11 +51,11 @@ The project uses the `spmforkmp` plugin, configured in `shared/build.gradle.kts`
 
 - **Swift Package Configuration**: Defining the Swift version and name for the generated cinterop.
   - `toolsVersion = "6.0"`: Specifies the Swift tools version to use. This enables advanced features like typed throws and strict concurrency.
-- **Compiler Arguments**: A requirement for iOS simulator testing (see [Concurrency Support in KMP iOS Test](https://spmforkmp.eu/section-help/tips/#support-concurrency-in-kmp-ios-test)):
+- **Compiler Arguments**: [A requirement for iOS simulator testing](https://github.com/frankois944/Swift-Import-Interoperability-with-Kotlin-Multiplatform/blob/fb7856158c5b96a8a4490ffdccad750ec153dcc1/shared/build.gradle.kts#L16-L19) (see [Concurrency Support in KMP iOS Test](https://spmforkmp.eu/section-help/tips/#support-concurrency-in-kmp-ios-test)):
   ```kotlin
   freeCompilerArgs += listOf("-Xoverride-konan-properties=osVersionMin.ios_simulator_arm64=16.0")
   ```
-- **Strict Enums**: Specifying which Swift enums should be treated as type-safe enums in Kotlin (see [Strict Enums Documentation](https://spmforkmp.eu/references/swiftPackageConfig/#strictenums)):
+- **Strict Enums**: [Specifying which Swift enums should be treated as type-safe](https://github.com/frankois944/Swift-Import-Interoperability-with-Kotlin-Multiplatform/blob/fb7856158c5b96a8a4490ffdccad750ec153dcc1/shared/build.gradle.kts#L25) enums in Kotlin (see [Strict Enums Documentation](https://spmforkmp.eu/references/swiftPackageConfig/#strictenums)):
   ```kotlin
   strictEnums = listOf("EnumData", "EnumError", "ConcurrencyError", "ThrowError")
   ```
