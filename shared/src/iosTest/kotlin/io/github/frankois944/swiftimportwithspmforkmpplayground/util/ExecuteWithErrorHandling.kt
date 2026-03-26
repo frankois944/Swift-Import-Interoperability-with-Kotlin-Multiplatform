@@ -13,8 +13,6 @@ import platform.Foundation.NSError
 
 /**
  * Custom exception that wraps a Swift NSError for use in Kotlin.
- *
- * Related Swift file: [Throws.swift](shared/src/swift/playground/Throws.swift)
  */
 class SwiftException(
     val nsError: NSError,
