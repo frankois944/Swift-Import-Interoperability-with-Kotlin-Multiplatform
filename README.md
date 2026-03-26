@@ -24,7 +24,7 @@ The project includes several test files, each focusing on a specific aspect of S
 - **Swift Enums**: Importing and using Swift enums in Kotlin.
 - **Type-Safe Enums**: Demonstrating the use of `strictEnums` configuration from the `spmforkmp` plugin to make imported enums type-safe in Kotlin.
 
-### 4. Error Handling and Exceptions ([`Throws.swift`](shared/src/swift/playground/Throws.swift), [`ThrowTest.kt`](shared/src/iosTest/kotlin/io/github/frankois944/swiftimportwithspmforkmpplayground/ThrowTest.kt)
+### 4. Error Handling and Exceptions ([`Throws.swift`](shared/src/swift/playground/Throws.swift), [`ThrowTest.kt`](shared/src/iosTest/kotlin/io/github/frankois944/swiftimportwithspmforkmpplayground/ThrowTest.kt))
 - **Handling Throws**: Intercepting Swift errors (`throws`) in Kotlin.
 
 ## Error Management Helper
