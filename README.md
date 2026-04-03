@@ -29,6 +29,10 @@ The project includes several test files, each focusing on a specific aspect of S
 ### 4. Error Handling and Exceptions ([`Throws.swift`](shared/src/swift/playground/Throws.swift), [`ThrowTest.kt`](shared/src/iosTest/kotlin/io/github/frankois944/swiftimportwithspmforkmpplayground/ThrowTest.kt))
 - **Handling Throws**: Intercepting Swift errors (`throws`) in Kotlin.
 
+### 5. Wrapping Swift Native APIs ([`ObjectWrapper.swift`](shared/src/swift/playground/ObjectWrapper.swift) & [`ObjectWrapperTest.kt`](shared/src/iosTest/kotlin/io/github/frankois944/swiftimportwithspmforkmpplayground/ObjectWrapperTest.kt))
+- **Pure Swift Types**: Handling Swift structs and classes that aren't directly compatible with Objective-C/Kotlin.
+- **Bridging Pattern**: Demonstrating how to expose Swift-only APIs (like third-party libraries) through Objective-C compatible interfaces.
+
 ## Error Management Helper
 
 The project includes a utility function, [`executeWithErrorHandling`](shared/src/iosTest/kotlin/io/github/frankois944/swiftimportwithspmforkmpplayground/util/ExecuteWithErrorHandling.kt), designed to simplify error management when calling Swift methods that follow the Objective-C error pointer pattern.
