@@ -2,6 +2,7 @@
 
 package io.github.frankois944.swiftimportwithspmforkmpplayground
 
+import io.github.frankois944.swiftimportwithspmforkmpplayground.util.toConcurrencyError
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.coroutines.test.runTest
 import playground.Concurrency
@@ -116,8 +117,8 @@ class ConcurrencyTest {
             }
             assertNotNull(error)
             assertEquals(
-                ConcurrencyError.ConcurrencyErrorInvalidData.value,
-                error.nsError.code,
+                error.nsError.toConcurrencyError(),
+                ConcurrencyError.ConcurrencyErrorInvalidData
             )
             assertEquals(null, result)
         }
