@@ -24,7 +24,7 @@ import Foundation
         throw ThrowError.error1
     }
 
-    /// A method with a parameter that can throw an error and return a value using typed `throws`.
+    /// A method with a parameter that can throw an error and return a value using untyped `throws`.
     /// This allows the compiler to know the exact error type.
     /// - Parameter input: The string to process.
     /// - Returns: A greeting string if successful.
