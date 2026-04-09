@@ -10,6 +10,9 @@ import Foundation
 @available(iOS 16.0.0, *)
 @objcMembers public class Concurrency: NSObject {
 
+    // workaround to export ConcurrencyError type to Kotlin
+    public let bindConcurrencyErrorTypeToKotlin: ConcurrencyError = .noError
+
     /// A basic async function.
     @objc(doAsyncStuff:)
     public func doAsyncStuff() async {
@@ -38,7 +41,7 @@ import Foundation
     /// - Returns: A processed greeting string.
     /// - Throws: `ConcurrencyError.invalidData` if input is empty.
     @objc(doAsyncStuffWithValueAndError::)
-    public func doAsyncStuffWithValueAndError(input: String) async throws(ConcurrencyError) -> String {
+    public func doAsyncStuffWithValueAndError(input: String) async throws -> String {
         try? await Task.sleep(for: .seconds(0.5))
         if input.isEmpty {
             throw ConcurrencyError.invalidData
@@ -52,7 +55,7 @@ import Foundation
     ///   - onResult: A closure called when the operation finishes, providing the result or an error.
     @MainActor
     @objc(doAsyncStuffWithoutAsync::)
-    public func doAsyncStuffWithoutAsync(input: String, onResult: @escaping (String?, NSError?) -> Void) {
+    public func doAsyncStuffWithoutAsync(input: String, onResult: @escaping @Sendable (String?, NSError?) -> Void) {
         DispatchQueue.global().async {
             if input.isEmpty {
                 onResult(

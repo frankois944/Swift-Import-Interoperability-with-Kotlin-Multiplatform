@@ -2,7 +2,9 @@
 
 package io.github.frankois944.swiftimportwithspmforkmpplayground
 
+import io.github.frankois944.swiftimportwithspmforkmpplayground.util.toThrowError
 import kotlinx.cinterop.ExperimentalForeignApi
+import platform.Foundation.NSError
 import playground.Throw
 import playground.ThrowError
 import kotlin.test.BeforeTest
@@ -10,6 +12,8 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
+
+
 
 /**
  * This test class demonstrates the use case of importing Swift code that throws errors from a
@@ -62,8 +66,8 @@ class ThrowTest {
         assertNull(value)
         assertNotNull(error)
         assertEquals(
-            error.nsError.code,
-            ThrowError.ThrowErrorError2.value,
+            error.nsError.toThrowError(),
+            ThrowError.ThrowErrorError2,
         )
     }
 
