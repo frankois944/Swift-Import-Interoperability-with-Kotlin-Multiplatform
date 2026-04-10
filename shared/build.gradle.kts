@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMultiplatform::class)
+
 import io.github.frankois944.spmForKmp.swiftPackageConfig
 import kotlin.apply
 import kotlin.collections.plus
@@ -23,6 +25,7 @@ kotlin {
             toolsVersion = "6.0"
             // https://spmforkmp.eu/references/swiftPackageConfig/#strictenums
             strictEnums = listOf("EnumData", "EnumError", "ConcurrencyError", "ThrowError")
+            newPublicationInteroperability = true
         }
         iosTarget.binaries.framework {
             baseName = "Shared"
