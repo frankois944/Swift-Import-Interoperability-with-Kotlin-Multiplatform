@@ -43,8 +43,8 @@ class ThrowTest {
         }
         assertNotNull(error)
         assertEquals(
-            error.nsError.code,
             ThrowError.ThrowErrorError1.value,
+            error.nsError.code,
         )
     }
 
@@ -66,8 +66,8 @@ class ThrowTest {
         assertNull(value)
         assertNotNull(error)
         assertEquals(
-            error.nsError.toThrowError(),
             ThrowError.ThrowErrorError2,
+            error.nsError.toThrowError(),
         )
     }
 
