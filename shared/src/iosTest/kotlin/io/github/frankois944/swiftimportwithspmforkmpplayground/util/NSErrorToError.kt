@@ -2,7 +2,6 @@
 
 package io.github.frankois944.swiftimportwithspmforkmpplayground.util
 
-import kotlinx.cinterop.CEnum
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSError
 import playground.ConcurrencyError
