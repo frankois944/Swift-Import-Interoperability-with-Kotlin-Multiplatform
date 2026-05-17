@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMultiplatform::class)
+
 import io.github.frankois944.spmForKmp.swiftPackageConfig
 import kotlin.apply
 import kotlin.collections.plus
