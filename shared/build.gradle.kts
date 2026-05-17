@@ -17,7 +17,7 @@ kotlin {
         iosTarget.binaries.getTest("debug").apply {
             freeCompilerArgs +=
                 listOf(
-                    "-Xoverride-konan-properties=osVersionMin.ios_simulator_arm64=16.0",
+                    "-Xoverride-konan-properties=osVersionMin.ios_simulator_arm64=15.0",
                 )
         }
         iosTarget.swiftPackageConfig(cinteropName = "playground") {
